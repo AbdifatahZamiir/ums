@@ -1,5 +1,5 @@
 import React from "react";
-
+import Dashboard from "../components/dashboard";
 export default function Index() {
-  return <h1>Next js App</h1>;
+	return <Dashboard />;
 }
