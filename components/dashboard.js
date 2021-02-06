@@ -177,8 +177,7 @@ export default function Dashboard() {
             <ChevronLeftIcon />
           </IconButton>
         </div>
-        <Divider />
-        <List>{mainListItems}</List>
+        <Divider /> <List>{mainListItems}</List>
         <Divider />
         <List>{secondaryListItems}</List>
       </Drawer>
