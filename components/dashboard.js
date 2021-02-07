@@ -17,8 +17,8 @@ import Link from "@material-ui/core/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import { mainListItems, secondaryListItems } from "./listitems";
-
+// import { mainListItems, secondaryListItems } from "./listitems";
+import Mylist from "./listitems";
 
 function Copyright() {
   return (
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   appBar: {
-    backgroundColor: "#cacdcd",
+    backgroundColor: "#ededed",
     color: "#2d3e56",
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
@@ -116,10 +116,10 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
-  uoh:{
+  uoh: {
     float: "left",
     marginRight: 40,
-  }
+  },
 }));
 
 export default function Dashboard() {
@@ -151,7 +151,6 @@ export default function Dashboard() {
               open && classes.menuButtonHidden
             )}
           >
-            
             <MenuIcon />
           </IconButton>
           <Typography
@@ -178,15 +177,16 @@ export default function Dashboard() {
         open={open}
       >
         <div className={classes.toolbarIcon}>
-        <h1 className={classes.uoh}>UOH</h1>
+          <h1 className={classes.uoh}>UOH</h1>
 
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
         </div>
-        <Divider /> <List>{mainListItems}</List>
-        <Divider />
-        <List>{secondaryListItems}</List>
+        <Divider />{" "}
+        <List>
+          <Mylist />
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
