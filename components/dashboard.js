@@ -13,12 +13,12 @@ import IconButton from "@material-ui/core/IconButton";
 import Badge from "@material-ui/core/Badge";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { mainListItems, secondaryListItems } from "./listitems";
+
 
 function Copyright() {
   return (
@@ -116,6 +116,10 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  uoh:{
+    float: "left",
+    marginRight: 40,
+  }
 }));
 
 export default function Dashboard() {
@@ -127,7 +131,7 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  // const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
@@ -147,6 +151,7 @@ export default function Dashboard() {
               open && classes.menuButtonHidden
             )}
           >
+            
             <MenuIcon />
           </IconButton>
           <Typography
@@ -173,6 +178,8 @@ export default function Dashboard() {
         open={open}
       >
         <div className={classes.toolbarIcon}>
+        <h1 className={classes.uoh}>UOH</h1>
+
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
